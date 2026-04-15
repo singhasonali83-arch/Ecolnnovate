@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoInnovate – Curiosity-Driven Sustainability Solutions</title>
+  <meta name="description" content="Explore creative, actionable environmental solutions in water, waste, energy, biodiversity, and pollution. Interactive prototypes that inspire change." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="logo-leaf">🌿</span>
+        <span class="logo-text">EcoInnovate</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#ideas">Solutions</a></li>
+        <li><a href="#impact">Impact</a></li>
+      </ul>
+      <div class="nav-badge">6 Solutions</div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-tag">🌍 Environmental Innovation 2025</div>
+      <h1>Small Ideas. <br/><span class="gradient-text">Giant Impact.</span></h1>
+      <p class="hero-sub">Curiosity-driven solutions for water, waste, energy, biodiversity & pollution — powered by real science and interactive prototypes.</p>
+      <div class="hero-btns">
+        <a href="#ideas" class="btn-primary">Explore Solutions</a>
+        <a href="#impact" class="btn-ghost">View Impact</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">5</span><span class="stat-label">Categories</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">6</span><span class="stat-label">Innovations</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Potential</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="earth-orb">
+        <div class="orb-ring ring1"></div>
+        <div class="orb-ring ring2"></div>
+        <div class="orb-ring ring3"></div>
+        <div class="orb-core">🌍</div>
+        <div class="orb-pulse"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Filter -->
+  <section id="ideas">
+    <div class="section-header">
+      <h2>Creative <span class="gradient-text">Solutions</span></h2>
+      <p>Each idea turns a real environmental problem into an opportunity for change</p>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="energy">⚡ Energy</button>
+      <button class="filter-btn" data-filter="water">💧 Water</button>
+      <button class="filter-btn" data-filter="waste">♻️ Waste</button>
+      <button class="filter-btn" data-filter="biodiversity">🌱 Biodiversity</button>
+      <button class="filter-btn" data-filter="pollution">🌬️ Pollution</button>
+    </div>
+
+    <!-- Ideas Grid -->
+    <div class="ideas-grid" id="ideasGrid">
+
+      <!-- IDEA 1: Footstep Electricity -->
+      <div class="idea-card" data-category="energy" id="card-footstep">
+        <div class="card-glow glow-energy"></div>
+        <div class="card-header">
+          <span class="card-category energy-tag">⚡ Energy</span>
+          <span class="card-number">01</span>
+        </div>
+        <div class="card-icon">👟</div>
+        <h3>Footstep‑Generated Electricity</h3>
+        <p>Piezoelectric floors in stations and malls convert human footsteps into electricity, powering lights, signs, and information boards — using movement that already exists.</p>
+        <div class="card-facts">
+          <div class="fact"><span>📍</span> Train stations & malls</div>
+          <div class="fact"><span>⚡</span> Powers signs & lighting</div>
+          <div class="fact"><span>🔄</span> Zero extra energy input</div>
+        </div>
+        <button class="prototype-btn" onclick="openModal('footstep')">
+          <span>▶ Launch Prototype</span>
+          <div class="btn-shine"></div>
+        </button>
+      </div>
+
+      <!-- IDEA 2: Rainwater Harvesting -->
+      <div class="idea-card" data-category="water" id="card-rain">
+        <div class="card-glow glow-water"></div>
+        <div class="card-header">
+          <span class="card-category water-tag">💧 Water</span>
+          <span class="card-number">02</span>
+        </div>
+        <div class="card-icon">🌧️</div>
+        <h3>Smart Rooftop Rain Collector</h3>
+        <p>IoT-enabled rooftop systems collect and filter rainwater for garden irrigation and toilet flushing. Sensors detect rainfall and open collection channels automatically, reducing municipal water use by up to 40%.</p>
+        <div class="card-facts">
+          <div class="fact"><span>🏠</span> Homes & schools</div>
+          <div class="fact"><span>💧</span> 40% water savings</div>
+          <div class="fact"><span>📡</span> IoT sensor-controlled</div>
+        </div>
+        <button class="prototype-btn" onclick="openModal('rain')">
+          <span>▶ Launch Prototype</span>
+          <div class="btn-shine"></div>
+        </button>
+      </div>
+
+      <!-- IDEA 3: Bio-Bin Smart Waste -->
+      <div class="idea-card" data-category="waste" id="card-biobin">
+        <div class="card-glow glow-waste"></div>
+        <div class="card-header">
+          <span class="card-category waste-tag">♻️ Waste</span>
+          <span class="card-number">03</span>
+        </div>
+        <div class="card-icon">🗑️</div>
+        <h3>Bio‑Bin: AI Waste Sorter</h3>
+        <p>A smart bin with a camera and lightweight AI identifies whether you're throwing plastic, wet waste, or recyclable material — and auto-rotates the correct compartment. Lights guide users, reducing contamination by 70%.</p>
+        <div class="card-facts">
+          <div class="fact"><span>🤖</span> AI image sorting</div>
+          <div class="fact"><span>✅</span> 70% less contamination</div>
+          <div class="fact"><span>📲</span> App reporting</div>
+        </div>
+        <button class="prototype-btn" onclick="openModal('biobin')">
+          <span>▶ Launch Prototype</span>
+          <div class="btn-shine"></div>
+        </button>
+      </div>
+
+      <!-- IDEA 4: Seed Bomb Grenades -->
+      <div class="idea-card" data-category="biodiversity" id="card-seed">
+        <div class="card-glow glow-bio"></div>
+        <div class="card-header">
+          <span class="card-category bio-tag">🌱 Biodiversity</span>
+          <span class="card-number">04</span>
+        </div>
+        <div class="card-icon">💣</div>
+        <h3>Seed Bomb Micro‑Forests</h3>
+        <p>Biodegradable balls packed with native plant seeds, compost, and clay. Toss them into barren patches or unused land. Rain breaks them open and native wildflowers, grasses, and shrubs take root — creating micro-habitats for insects and birds.</p>
+        <div class="card-facts">
+          <div class="fact"><span>🌸</span> Native plant species</div>
+          <div class="fact"><span>🐝</span> Pollinators & birds</div>
+          <div class="fact"><span>🌍</span> Zero cost scaling</div>
+        </div>
+        <button class="prototype-btn" onclick="openModal('seed')">
+          <span>▶ Launch Prototype</span>
+          <div class="btn-shine"></div>
+        </button>
+      </div>
+
+      <!-- IDEA 5: Algae Air Purifier -->
+      <div class="idea-card" data-category="pollution" id="card-algae">
+        <div class="card-glow glow-pollution"></div>
+        <div class="card-header">
+          <span class="card-category pollution-tag">🌬️ Pollution</span>
+          <span class="card-number">05</span>
+        </div>
+        <div class="card-icon">🌊</div>
+        <h3>Algae Urban Air Purifier</h3>
+        <p>Glass panels filled with algae cultures placed on building facades and bus stops. Algae naturally absorbs CO₂ and releases oxygen — one panel equals the air-purifying power of 20 trees while occupying minimal space.</p>
+        <div class="card-facts">
+          <div class="fact"><span>🌬️</span> Absorbs CO₂</div>
+          <div class="fact"><span>🌳</span> = 20 trees per panel</div>
+          <div class="fact"><span>🏙️</span> Urban buildings & stops</div>
+        </div>
+        <button class="prototype-btn" onclick="openModal('algae')">
+          <span>▶ Launch Prototype</span>
+          <div class="btn-shine"></div>
+        </button>
+      </div>
+
+      <!-- IDEA 6: Solar Water Purifier -->
+      <div class="idea-card" data-category="water" id="card-solar">
+        <div class="card-glow glow-energy"></div>
+        <div class="card-header">
+          <span class="card-category energy-tag">☀️ Water + Energy</span>
+          <span class="card-number">06</span>
+        </div>
+        <div class="card-icon">☀️</div>
+        <h3>Solar Evaporation Purifier</h3>
+        <p>A low-cost device using a black-painted surface and solar heat to evaporate and re-condense dirty water — purifying it without electricity. Made from recycled bottles and locally sourced materials, deployable anywhere with sunlight.</p>
+        <div class="card-facts">
+          <div class="fact"><span>☀️</span> 100% solar-powered</div>
+          <div class="fact"><span>💰</span> Under ₹500 to build</div>
+          <div class="fact"><span>🌍</span> Rural & disaster relief</div>
+        </div>
+        <button class="prototype-btn" onclick="openModal('solar')">
+          <span>▶ Launch Prototype</span>
+          <div class="btn-shine"></div>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section id="impact">
+    <div class="section-header">
+      <h2>Collective <span class="gradient-text">Impact</span></h2>
+      <p>If all six solutions are implemented at scale in a city of 1 million people</p>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-icon">⚡</div>
+        <div class="impact-num" data-target="2400">0</div>
+        <div class="impact-unit">kWh/day</div>
+        <div class="impact-label">Footstep Energy Generated</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">💧</div>
+        <div class="impact-num" data-target="40">0</div>
+        <div class="impact-unit">% less</div>
+        <div class="impact-label">Municipal Water Demand</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">♻️</div>
+        <div class="impact-num" data-target="70">0</div>
+        <div class="impact-unit">% drop</div>
+        <div class="impact-label">Waste Contamination</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🌱</div>
+        <div class="impact-num" data-target="50000">0</div>
+        <div class="impact-unit">plants</div>
+        <div class="impact-label">New Native Habitats</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🌬️</div>
+        <div class="impact-num" data-target="1200">0</div>
+        <div class="impact-unit">tonnes CO₂</div>
+        <div class="impact-label">Absorbed Annually</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">☀️</div>
+        <div class="impact-num" data-target="5000">0</div>
+        <div class="impact-unit">families</div>
+        <div class="impact-label">With Clean Water Access</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">🌿 EcoInnovate</div>
+      <p>Curiosity is the first step toward a sustainable world.</p>
+      <p class="footer-credit">Built with 💚 for the planet · 2025</p>
+    </div>
+  </footer>
+
+  <!-- ===================== MODALS ===================== -->
+
+  <!-- MODAL: Footstep Electricity -->
+  <div class="modal-overlay" id="modal-footstep">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('footstep')">✕</button>
+      <div class="modal-header energy-header">
+        <span class="modal-emoji">👟</span>
+        <div>
+          <div class="modal-tag energy-tag">⚡ Energy</div>
+          <h2>Footstep-Generated Electricity</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">Piezoelectric crystals compress under pressure and release a small electric charge. When embedded in floor tiles, every footstep generates ~5–8 milliwatts of electricity. In a busy station with 10,000 daily footsteps per tile, the energy adds up significantly!</p>
+        
+        <!-- Interactive Prototype -->
+        <div class="prototype-box" id="footstep-proto">
+          <div class="proto-title">🔬 Interactive Prototype — Piezoelectric Floor</div>
+          <div class="floor-grid" id="floorGrid"></div>
+          <div class="floor-stats">
+            <div class="fs"><span id="footstep-count">0</span> <small>Steps</small></div>
+            <div class="fs"><span id="energy-gen">0.00</span> mW <small>Generated</small></div>
+            <div class="fs"><span id="bulb-status">💡 OFF</span> <small>LED Status</small></div>
+          </div>
+          <p class="proto-hint">👆 Click tiles to simulate footsteps!</p>
+        </div>
+
+        <div class="how-it-works">
+          <h4>How It Works</h4>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><p>Piezoelectric crystals embedded in floor tiles</p></div>
+            <div class="step"><div class="step-num">2</div><p>Footstep compresses crystals, generating electric charge</p></div>
+            <div class="step"><div class="step-num">3</div><p>Charge stored in capacitors or batteries</p></div>
+            <div class="step"><div class="step-num">4</div><p>Powers LED signs, information boards, or sensors</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Rain Collector -->
+  <div class="modal-overlay" id="modal-rain">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('rain')">✕</button>
+      <div class="modal-header water-header">
+        <span class="modal-emoji">🌧️</span>
+        <div>
+          <div class="modal-tag water-tag">💧 Water</div>
+          <h2>Smart Rooftop Rain Collector</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">An IoT-enabled system that automatically opens collection channels when rain is detected, filters the water, and routes it for non-potable uses like flushing and irrigation — reducing municipal water demand significantly.</p>
+        
+        <div class="prototype-box" id="rain-proto">
+          <div class="proto-title">🔬 Interactive Prototype — Rain Collection System</div>
+          <div class="rain-sim">
+            <div class="sky" id="rainSky">
+              <div class="cloud">☁️</div>
+              <div class="raindrops" id="raindrops"></div>
+            </div>
+            <div class="roof-house">
+              <div class="roof-top"></div>
+              <div class="gutter"></div>
+              <div class="pipe-down"></div>
+              <div class="tank-area">
+                <div class="tank-label">💧 Collection Tank</div>
+                <div class="tank-outer">
+                  <div class="tank-fill" id="tankFill"></div>
+                  <div class="tank-level" id="tankLevel">0%</div>
+                </div>
+              </div>
+            </div>
+            <div class="rain-controls">
+              <button class="rain-btn" id="rainToggle" onclick="toggleRain()">🌧️ Start Rain</button>
+              <button class="rain-btn" onclick="useTankWater()">🚿 Use Water</button>
+            </div>
+            <div class="rain-stats">
+              <div class="rs">💧 Collected: <strong id="litersCollected">0L</strong></div>
+              <div class="rs">🏠 Saved: <strong id="litersSaved">0L</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="how-it-works">
+          <h4>How It Works</h4>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><p>Rain sensor detects rainfall and opens channel valve</p></div>
+            <div class="step"><div class="step-num">2</div><p>Water collected from roof flows through mesh filter</p></div>
+            <div class="step"><div class="step-num">3</div><p>Stored in underground/rooftop tank</p></div>
+            <div class="step"><div class="step-num">4</div><p>IoT system routes water to toilets & garden automatically</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Bio-Bin -->
+  <div class="modal-overlay" id="modal-biobin">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('biobin')">✕</button>
+      <div class="modal-header waste-header">
+        <span class="modal-emoji">🗑️</span>
+        <div>
+          <div class="modal-tag waste-tag">♻️ Waste</div>
+          <h2>Bio-Bin: AI Waste Sorter</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">A smart bin with a camera and AI classifier that identifies waste type in real-time and auto-rotates the correct compartment. LED color coding guides users, drastically reducing contamination of recyclable and compostable waste.</p>
+        
+        <div class="prototype-box" id="biobin-proto">
+          <div class="proto-title">🔬 Interactive Prototype — AI Waste Sorter</div>
+          <div class="bin-sim">
+            <div class="waste-items">
+              <div class="waste-item" draggable="true" data-type="plastic" id="wi-plastic" ondragstart="dragWaste(event)">🥤 Plastic Bottle</div>
+              <div class="waste-item" draggable="true" data-type="organic" id="wi-organic" ondragstart="dragWaste(event)">🍌 Organic Waste</div>
+              <div class="waste-item" draggable="true" data-type="paper" id="wi-paper" ondragstart="dragWaste(event)">📄 Paper</div>
+              <div class="waste-item" draggable="true" data-type="glass" id="wi-glass" ondragstart="dragWaste(event)">🍶 Glass</div>
+            </div>
+            <div class="ai-scanner" id="aiScanner">
+              <div class="scanner-label">🤖 AI Scanner</div>
+              <div class="scan-area" id="scanArea" ondrop="dropWaste(event)" ondragover="event.preventDefault()">
+                <div class="scan-ring"></div>
+                <p>Drop waste here</p>
+              </div>
+              <div class="scan-result" id="scanResult"></div>
+            </div>
+            <div class="bin-compartments">
+              <div class="compartment" id="comp-plastic" data-type="plastic">
+                <div class="comp-icon">♳</div>
+                <div class="comp-label">Plastic</div>
+                <div class="comp-count">0</div>
+              </div>
+              <div class="compartment" id="comp-organic" data-type="organic">
+                <div class="comp-icon">🌱</div>
+                <div class="comp-label">Organic</div>
+                <div class="comp-count">0</div>
+              </div>
+              <div class="compartment" id="comp-paper" data-type="paper">
+                <div class="comp-icon">📄</div>
+                <div class="comp-label">Paper</div>
+                <div class="comp-count">0</div>
+              </div>
+              <div class="compartment" id="comp-glass" data-type="glass">
+                <div class="comp-icon">🫙</div>
+                <div class="comp-label">Glass</div>
+                <div class="comp-count">0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="how-it-works">
+          <h4>How It Works</h4>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><p>Camera captures image of waste item being inserted</p></div>
+            <div class="step"><div class="step-num">2</div><p>Lightweight AI model classifies: plastic/organic/paper/glass</p></div>
+            <div class="step"><div class="step-num">3</div><p>Servo motor rotates to correct compartment opening</p></div>
+            <div class="step"><div class="step-num">4</div><p>LED color confirms correct disposal. Data logged to app.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Seed Bomb -->
+  <div class="modal-overlay" id="modal-seed">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('seed')">✕</button>
+      <div class="modal-header bio-header">
+        <span class="modal-emoji">💣</span>
+        <div>
+          <div class="modal-tag bio-tag">🌱 Biodiversity</div>
+          <h2>Seed Bomb Micro-Forests</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">Biodegradable clay balls packed with native seeds and compost. When tossed into unused land and watered by rain, they burst open and native wildflowers and shrubs grow — creating micro-habitats for pollinators and wildlife.</p>
+        
+        <div class="prototype-box" id="seed-proto">
+          <div class="proto-title">🔬 Interactive Prototype — Seed Bomb Garden</div>
+          <div class="garden-sim">
+            <div class="land-area" id="landArea">
+              <div class="land-label">🏚️ Barren Land — Click to throw seed bombs!</div>
+            </div>
+            <div class="garden-controls">
+              <button class="rain-btn" id="raining-btn" onclick="triggerRain()">🌧️ Add Rain</button>
+              <button class="rain-btn" onclick="clearGarden()">🔄 Reset</button>
+            </div>
+            <div class="seed-stats">
+              <div class="rs">💣 Bombs Thrown: <strong id="bombsThrown">0</strong></div>
+              <div class="rs">🌸 Plants Growing: <strong id="plantsGrowing">0</strong></div>
+              <div class="rs">🐝 Pollinators: <strong id="pollinators">0</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="how-it-works">
+          <h4>How It Works</h4>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><p>Clay + compost + native seeds compressed into a ball</p></div>
+            <div class="step"><div class="step-num">2</div><p>Thrown into empty lots, roadside patches, or degraded land</p></div>
+            <div class="step"><div class="step-num">3</div><p>Rainfall dissolves clay, seeds germinate in nutrient-rich compost</p></div>
+            <div class="step"><div class="step-num">4</div><p>Native plants establish, attracting bees, butterflies, and birds</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Algae Purifier -->
+  <div class="modal-overlay" id="modal-algae">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('algae')">✕</button>
+      <div class="modal-header pollution-header">
+        <span class="modal-emoji">🌊</span>
+        <div>
+          <div class="modal-tag pollution-tag">🌬️ Pollution</div>
+          <h2>Algae Urban Air Purifier</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">Transparent panels filled with fast-growing microalgae cultures are mounted on building walls and bus stops. Through photosynthesis, algae absorb CO₂ and release fresh oxygen. One 2m² panel equals the air-cleaning power of 20 mature trees!</p>
+        
+        <div class="prototype-box" id="algae-proto">
+          <div class="proto-title">🔬 Interactive Prototype — Algae Panel</div>
+          <div class="algae-sim">
+            <div class="city-bg">
+              <div class="building b1"></div>
+              <div class="building b2"></div>
+              <div class="building b3"></div>
+              <div class="algae-panel" id="algaePanel">
+                <div class="algae-content" id="algaeContent"></div>
+                <div class="panel-label">Algae Panel</div>
+              </div>
+              <div class="pollution-cloud" id="pollutionCloud">☁️ CO₂</div>
+            </div>
+            <div class="algae-controls">
+              <label>Sunlight Intensity: <input type="range" id="sunlightSlider" min="0" max="100" value="50" oninput="updateAlgae()"></label>
+              <div class="algae-stats">
+                <div class="as">🌞 Light: <strong id="lightLevel">50%</strong></div>
+                <div class="as">🌿 Algae Growth: <strong id="algaeGrowth">Medium</strong></div>
+                <div class="as">💨 CO₂ Absorbed: <strong id="co2Absorbed">0</strong> g/hr</div>
+                <div class="as">🌬️ O₂ Released: <strong id="o2Released">0</strong> g/hr</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="how-it-works">
+          <h4>How It Works</h4>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><p>Glass panels filled with microalgae + nutrient solution</p></div>
+            <div class="step"><div class="step-num">2</div><p>Sunlight drives photosynthesis — CO₂ in, O₂ out</p></div>
+            <div class="step"><div class="step-num">3</div><p>Excess algae biomass harvested as biofuel or fertilizer</p></div>
+            <div class="step"><div class="step-num">4</div><p>Self-sustaining system requiring only water top-ups</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Solar Water Purifier -->
+  <div class="modal-overlay" id="modal-solar">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('solar')">✕</button>
+      <div class="modal-header energy-header">
+        <span class="modal-emoji">☀️</span>
+        <div>
+          <div class="modal-tag energy-tag">☀️ Solar + Water</div>
+          <h2>Solar Evaporation Purifier</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">A zero-electricity water purifier made from locally available materials. Dark surface absorbs solar heat, evaporates dirty water, and condenses it as clean water on a sloped transparent cover — safe to drink, costs under ₹500 to build.</p>
+        
+        <div class="prototype-box" id="solar-proto">
+          <div class="proto-title">🔬 Interactive Prototype — Solar Purifier</div>
+          <div class="solar-sim">
+            <div class="solar-device">
+              <div class="sun-source">
+                ☀️
+                <div class="sun-rays" id="sunRays"></div>
+              </div>
+              <div class="purifier">
+                <div class="dirty-chamber">
+                  <div class="dirty-water" id="dirtyWater"></div>
+                  <span>Dirty Water</span>
+                </div>
+                <div class="cover-slope"></div>
+                <div class="clean-chamber">
+                  <div class="clean-water" id="cleanWater"></div>
+                  <span>Clean Water ✅</span>
+                </div>
+              </div>
+            </div>
+            <div class="solar-controls">
+              <label>Solar Heat: <input type="range" id="heatSlider" min="0" max="100" value="0" oninput="updateSolar()"></label>
+              <div class="solar-stats">
+                <div class="as">🌡️ Temperature: <strong id="solarTemp">25°C</strong></div>
+                <div class="as">💧 Evaporated: <strong id="evaporated">0</strong> mL</div>
+                <div class="as">✅ Purified: <strong id="purified">0</strong> mL</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="how-it-works">
+          <h4>How It Works</h4>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><p>Black surface heats dirty water using solar energy</p></div>
+            <div class="step"><div class="step-num">2</div><p>Water evaporates, leaving contaminants behind</p></div>
+            <div class="step"><div class="step-num">3</div><p>Steam condenses on angled transparent cover</p></div>
+            <div class="step"><div class="step-num">4</div><p>Clean water drips into collection container</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
